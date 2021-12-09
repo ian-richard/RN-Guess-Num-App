@@ -31,6 +31,18 @@ const styles = StyleSheet.create({
     width: 300,
     maxWidth: "80%",
     alignItems: "center",
+    //ios only
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    //ios end
+    //android only
+    elevation: 5,
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 10,
+    //android end
   },
   buttonContainer: {
     flexDirection: "row",
