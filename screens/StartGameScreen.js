@@ -1,18 +1,25 @@
 import React from "react";
 import { View, StyleSheet, Text, TextInput, Button } from "react-native";
+import Card from "../components/Card";
+import Colors from "../constants/Colors";
+import Input from "../components/Input";
 
 const StartGameScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Start a new game!</Text>
-      <View style={styles.inputContainer}>
+      <Card style={styles.inputContainer}>
         <Text style={styles.title}>Select a number</Text>
         <TextInput></TextInput>
         <View style={styles.buttonContainer}>
-          <Button title="Confirm" />
-          <Button title="Reset" />
+          <View style={styles.button}>
+            <Button title="Reset" onPress={() => {}} color={Colors.accent} />
+          </View>
+          <View style={styles.button}>
+            <Button title="Confirm" onPress={() => {}} color={Colors.primary} />
+          </View>
         </View>
-      </View>
+      </Card>
     </View>
   );
 };
@@ -23,6 +30,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
   },
+  //make buttons equal size
   title: {
     fontSize: 20,
     marginVertical: 10,
@@ -31,24 +39,15 @@ const styles = StyleSheet.create({
     width: 300,
     maxWidth: "80%",
     alignItems: "center",
-    //ios only
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 6,
-    shadowOpacity: 0.26,
-    //ios end
-    //android only
-    elevation: 5,
-    backgroundColor: "white",
-    padding: 20,
-    borderRadius: 10,
-    //android end
   },
   buttonContainer: {
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
     paddingHorizontal: 15,
+  },
+  button: {
+    width: 100,
   },
 });
 
